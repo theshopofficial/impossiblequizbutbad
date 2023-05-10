@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="css/menu_ui.css">
+      <link rel="stylesheet" href="css/game_ui.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Stylesheets & Links -->
+      
+      <title>.</title>
+      <!-- The Impossible Quiz but I was lazy -->
+   </head>
+   
+   <body>
+      <div class="gamwin" id="game">
+         <div class="quest" id="ask">Question Question Question Question Question</div>
+         
+         <div class="inputfield">
+            <button id="ab" onclick="ansQuest('a')">A</button>
+            <button id="bb" onclick="ansQuest('b')">B</button>
+            <br>
+            <button id="cb" onclick="ansQuest('c')">C</button>
+            <button id="db" onclick="ansQuest('d')">D</button>
+         </div>
+         
+         <div class="questNum" id="qnum">0</div>
+         
+         <p style="position: fixed; top: 0; right: 0; margin: 2%; font-size: 5vh;">Fails: <span id="fails">0</span></p>
+      </div>
+      
+      <div class="gamwin" id="end"></div>
+      
+      <div class="gamwin" id="menu" style="text-align: center;">
+         <p class="mmtitletext">The Impossible Quiz<br><span style="font-size: 4.5vh; margin: 0;">(but I was lazy)</span></p>
+         <button class="mmbutton" onclick="mmNavi('game')">Play Game</button><br>
+         <button class="mmbutton" onclick="mmNavi('about')">About the Quiz</button><br>
+         <button class="mmbutton" onclick="mmNavi('more')">Other Games</button><br>
+      </div>
+   </body>
+<!--
+MAIN NOTES ----------------------------------
+
+Scripts:
+- Something to handle questions
+- Navigation & Settings
+- Game over & game start handler
+
+Stylesheets:
+- Something to handle the game ui
+- Something to handle the menu ui
+- Special Events
+- Fonts
+- Main
+
+QUESTIONS -----------------------------------
+
+1 - Is this going to be easy [Debateable]
+2 - I am [Lazy]
+-->
+   
+   <script>
+      document.getElementById("game").style.display = "none";
+      document.getElementById("end").style.display = "none";
+
+      function mmNavi(go) {
+         if (go == 'game') {
+            loadGame();
+            document.getElementById("menu").style.display = "none";
+            document.getElementById("game").style.display = "block";
+         }
+         else if (go == 'about') {}
+         else if (go == 'more') {window.location.href = 'https://google.com';}
+      }
+      
+      
+      
+      
+      function loadGame() {
+         question = setQ;
+      }
+
+      var question = 1
+
+
+
+      function ansQuest(x) {
+         if (x == cor) {question++;}
+         else {fails++;}
+      }
+
+      function showQuestion() {
+         if (question == 1) {
+            ask = "This is going to be easy";
+
+            a = "Yes";
+            b = "No";
+            c = "Maybe";
+            d = "I Suck";
+
+            cor = "d";
+         }
+         else if (question == 2) {
+            ask = "I am...";
+
+            a = "Lazy";
+            b = "Smart";
+            c = "Dumb";
+            d = "idk";
+
+            cor = "a";
+         }
+         else if (question == 3) {
+            ask = "The mitochondria is the...";
+
+            a = "Neutron Star";
+            b = "Powerhouse of the cell";
+            c = "The 494th gender";
+            d = "Nickname for King Edwards the IV";
+
+            cor = "b";
+         }
+         else if (question == 4) {
+            ask = "E=mc2";
+
+            a = "Electrons = Megawatts x Chips cubed";
+            b = "Energy = Mass x Circumference squared";
+            c = "Energy = Mass x Speed of light squared";
+            d = "There is no right answer idiot";
+
+            cor = "c";
+         }
+         else if (question == 5) {
+            ask = "Country Road";
+
+            a = "idk";
+            b = "Road in the country";
+            c = "Take me drinking";
+            d = "Take me home";
+
+            cor = "d";
+         }
+         else if (question == 6) {
+            ask = "Google was created in...";
+
+            a = "A dorm room";
+            b = "A garage";
+            c = "An office";
+            d = "Delaware";
+
+            cor = "a";
+         }
+         else if (question == 7) {
+            ask = "How much wood could a woodchuck chuck if a woodchuck could chuck wood?";
+
+            a = "79 pieces of wood";
+            b = "700 pounds of wood";
+            c = "A woodchuck wouldn't chuck wood";
+            d = "Chuck would as much as wood could";
+
+            cor = "b";
+         }
+         else if (question == 8) {
+            ask = "How are babies made";
+
+            a = "Pelican";
+            b = "Asexual reproduction";
+            c = "Ordering off Amazon";
+            d = "Hand-holding";
+
+            cor = "c";
+         }
+         else if (question == 9) {
+            ask = "The worst pringle flavor is...";
+
+            a = "Pickle";
+            b = "Mayonaise";
+            c = "Sea salt";
+            d = "Ketchup";
+
+            cor = "b";
+         }
+         else if (question == 10) {
+            ask = "The best pringle flavor is...";
+
+            a = "Sour cream & Onion";
+            b = "Sea salt";
+            c = "Cheddar";
+            d = "Pizza";
+
+            cor = "a";
+         }
+         else if (question == 11) {
+            ask = "Pick the Correct Option";
+
+            a = "Wrong";
+            b = "No";
+            c = "Optional";
+            d = "Yes";
+
+            cor = "b";
+         }
+         else if (question == 12) {
+            ask = "Planes can help with...";
+
+            a = "Getting to places faster";
+            b = "Vacationing for Christmas";
+            c = "Removing the towers from view";
+            d = "Empting your wallet";
+
+            cor = "c";
+         }
+         else if (question == 13) {
+            ask = "The Impossible Quiz is better than this";
+
+            a = "NO.";
+            b = "Debateable";
+            c = "This is the best thing i've ever done";
+            d = "Absolutely";
+
+            cor = "d";
+         }
+         else if (question == 14) {
+            ask = "The ultimate battle...";
+
+            a = "Song by Lemon Demon";
+            b = "what";
+            c = "of ultimate destiny";
+            d = "of ultimate complexity";
+
+            cor = "c";
+         }
+         else if (question == 15) {
+            ask = "The most searched thing is:";
+
+            a = "Youtube";
+            b = "Wordle";
+            c = "Google";
+            d = "Facebook";
+
+            cor = "a";
+         }
+         else if (question == 16) {
+            ask = "Orange chicken sucks";
+
+            a = "It's okay, but it's still pretty bad";
+            b = "You are wrong";
+            c = "It tastes so good how do you not like it";
+            d = "Yes, that stuff sucks";
+
+            cor = "c";
+         }
+         else if (question == 17) {
+            ask = "Who lives in a pineapple under the sea?";
+
+            a = "Malaysian Airline Flight 370";
+            b = "Spongebob Squarepants";
+            c = "Sponqebob Sguarepants";
+            d = "Spoonbop Rhombidodecahedronpants";
+
+            cor = "b";
+         }
+         else if (question == 18) {
+            ask = "Tf2 is bad";
+
+            a = "Wrong, it's very good";
+            b = "Tf1 was better";
+            c = "Stop asking weird ass questions";
+            d = "Correct Answer";
+
+            cor = "a";
+         }
+         else if (question == 19) {
+            ask = "What is country 23? <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/EU27-2008_European_Union_map-Numbered.svg/1280px-EU27-2008_European_Union_map-Numbered.svg.png' height='270'>";
+
+            a = "Ireland";
+            b = "Ukraine";
+            c = "United Kingdom";
+            d = "Spain";
+
+            cor = "c";
+         }
+         else if (question == 20) {
+            ask = "What is the best pizza song";
+
+            a = "Pizza Time";
+            b = "Funiculi Funicula";
+            c = "idk";
+            d = "No";
+
+            cor = "b";
+         }
+         else if (question == 21) {
+            ask = "<img src='https://steamuserimages-a.akamaihd.net/ugc/1859434258004790256/9BA80F0CB9DF489516021240DB0D56220F79AC5A/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true' height='270'>";
+
+            a = "._.";
+            b = "huh";
+            c = "Obunga";
+            d = "what";
+
+            cor = "c";
+         }
+         else if (question == 22) {
+            ask = "(578 x 3,345,456) / 3";
+
+            a = "644,567,856";
+            b = "478,438.07";
+            c = "644,557,856";
+            d = "67,898";
+
+            cor = "c";
+         }
+         else if (question == 23) {
+            ask = "Easy math right?";
+
+            a = "Easiest thing ever";
+            b = "Why did you do that";
+            c = "It was pretty damn hard";
+            d = "I used a calculator";
+
+            cor = "d";
+         }
+         else if (question == 24) {
+            ask = "What was the answer to question three?";
+
+            a = "This one";
+            b = "This one";
+            c = "This one";
+            d = "This one";
+
+            cor = "b";
+         }
+         else if (question == 25) {
+            ask = "Memes in 2014 be like";
+
+            a = "Youtube rewind is bad";
+            b = "Rizzed em' up";
+            c = "Oh baby a triple";
+            d = "YOLO";
+
+            cor = "c";
+         }
+         else if (question == 26) {
+            ask = "How did the singer of peanut butter jelly time die?";
+
+            a = "Commit suicide in a 11 hour standoff with the police";
+            b = "Banana overdose";
+            c = "In a hospital from a heart attack";
+            d = "Car crash";
+
+            cor = "a";
+         }
+         else if (question == 27) {
+            ask = "What is this: <img src='https://static.wikia.nocookie.net/the-know-your-meme-archive/images/7/76/Forever.gif/revision/latest?cb=20201028192203' height='270'>";
+
+            a = "Doesn't exist";
+            b = "Sad";
+            c = "Forever alone";
+            d = "Trollface";
+
+            cor = "c";
+         }
+         else if (question == 28) {
+            ask = "Which three produce share the same ansestor?";
+
+            a = "Pear, Apple, and Banana";
+            b = "Sweetpeas, Tabbaco, and Greenbeans";
+            c = "Broccoli, Celery, and Pumpkin";
+            d = "Broccoli, Cabbage, and Kale";
+
+            cor = "d";
+         }
+         else if (question == 29) {
+            ask = "If the highest class is the king what is lowest class?";
+
+            a = "Knight";
+            b = "Pawn";
+            c = "Surf";
+            d = "Nobels";
+
+            cor = "b";
+         }
+
+
+         // else bug protection
+
+         else {
+            ask = "Ieadkjboie nfoo idfnonerflndsofij eolksnfdoiemksndkjfe?";
+
+            a = "Of course";
+            b = "Of course";
+            c = "Of course";
+            d = "Of course";
+
+            var painnum = 0
+            var cors = ["a", "b", "c", "d"]
+            painnum = Math.floor(Math.random() * 4) + 1;
+
+            cor = cors[painnum];
+            question = "####";
+            document.getElementById("end").style.display = "block";
+         }
+      }
+
+      const setQ = 26
+
+      var cor = "abcd"
+      var ask = "QUETON"
+
+      var a = "Huh"
+      var b = "Huh"
+      var c = "Huh"
+      var d = "Huh"
+
+
+
+      var fails = 0
+
+      setInterval(function() {
+         showQuestion();
+
+         document.getElementById("ask").innerHTML = ask;
+
+         document.getElementById("ab").innerHTML = a;
+         document.getElementById("bb").innerHTML = b;
+         document.getElementById("cb").innerHTML = c;
+         document.getElementById("db").innerHTML = d;
+
+         document.getElementById("qnum").innerHTML = question;
+         document.getElementById("fails").innerHTML = fails;
+      }, 1);
+   </script>
+</html>
