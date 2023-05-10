@@ -1,0 +1,25 @@
+
+/* MAIN MENU TEXT CSS */
+
+.mmtitletext {
+   font-size: 13vh;
+   margin: 5%;
+}
+
+/* MAIN MENU BUTTON CSS*/
+
+.mmbutton {
+   width: 10%;
+   background-color: white;
+   height: 4%;
+   margin: 0.5%;
+   font-size: 2vh;
+   cursor: pointer;
+   border: 0.4vh solid black;
+   
+   transition: 0.2s ease-in-out;
+}
+.mmbutton:hover {
+   background-color: black;
+   color: white;
+}
